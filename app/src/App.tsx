@@ -7,7 +7,7 @@ function App() {
     return (
        <div>
             <header>
-                <h1>header header header</h1>
+                <h1>header area</h1>
             </header>
 
             <Routes>
