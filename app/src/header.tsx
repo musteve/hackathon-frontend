@@ -19,7 +19,9 @@ function Header() {
     return (
         <header>
             <Menu trigger="hover" openDelay={100} closeDelay={400}>
-                <Menu.Target>{menuItem.label}</Menu.Target>
+                <Menu.Target>
+                    <div>{menuItem.label}</div>
+                </Menu.Target>
                 <Menu.Dropdown>
                     {menuItemItems}
                 </Menu.Dropdown>
