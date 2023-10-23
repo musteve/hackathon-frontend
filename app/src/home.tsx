@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 function Home() {
     return (
         <>
-            <h3>home page</h3>
+            <h4>home page</h4>
             {/* <Button component={Link} to="/books">
                     books
             </Button>
