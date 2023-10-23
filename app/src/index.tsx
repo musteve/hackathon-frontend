@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { MantineProvider } from '@mantine/core';
-import Books from './books';
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(

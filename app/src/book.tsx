@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import HelloWorld from "./hello-world"
 import GetPersonalData from "./get-personal-data"
 
-function Books() {
+function Book() {
     return  (
         <>
             <h3>books page</h3>
@@ -16,4 +16,4 @@ function Books() {
     )
 }
 
-export default Books
+export default Book

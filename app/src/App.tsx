@@ -1,17 +1,21 @@
 import { Route, Routes } from 'react-router-dom';
-import Books from './books';
+import Book from './book';
 import Home from './home';
-import Header from './header';
+import { AppShell } from '@mantine/core';
 
 
 function App() {
     return (
         <>
-            <Header />
+            <AppShell
+                header={{height: 60}}
+            >
+                <AppShell.Header>Header</AppShell.Header>
+            </AppShell>
 
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path='/books' element={<Books />} />
+                <Route path='/book' element={<Book />} />
             </Routes>
 
         </>
