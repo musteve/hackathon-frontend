@@ -5,7 +5,7 @@ function Header() {
     const menuItem = {
         label: "Item",
         items: [
-            {link: "/book", label: "Book"},
+            {link: "/books", label: "Books"},
             {link: "/", label: "Home"}
         ]
     }
