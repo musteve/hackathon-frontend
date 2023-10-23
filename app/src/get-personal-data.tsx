@@ -34,3 +34,8 @@ function GetPersonalData() {
 }
 
 export default GetPersonalData
+
+
+function AddPersonalData() {
+    
+}

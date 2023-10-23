@@ -5,7 +5,7 @@ function Home() {
     return (
         <>
             <h3>home page</h3>
-            <Button component={Link} to="/books">
+            {/* <Button component={Link} to="/books">
                     books
             </Button>
             <Button>
@@ -13,7 +13,7 @@ function Home() {
             </Button>
             <Button>
                 vedeos
-            </Button>
+            </Button> */}
         </>
     )
 }

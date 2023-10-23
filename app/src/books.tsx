@@ -7,9 +7,9 @@ function Books() {
     return  (
         <>
             <h3>books page</h3>
-            <Button component={Link} to="/">
+            {/* <Button component={Link} to="/">
                 home
-            </Button>
+            </Button> */}
             <HelloWorld />
             <GetPersonalData />
         </>
