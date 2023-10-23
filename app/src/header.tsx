@@ -20,7 +20,7 @@ function Header() {
         <header>
             <Menu trigger="hover" openDelay={100} closeDelay={400}>
                 <Menu.Target>
-                    <>{menuItem.label}</>
+                    <div>{menuItem.label}</div>
                 </Menu.Target>
                 <Menu.Dropdown>
                     {menuItemItems}
