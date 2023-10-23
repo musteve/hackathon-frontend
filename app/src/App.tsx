@@ -1,21 +1,20 @@
 import { Route, Routes } from 'react-router-dom';
 import Books from './books';
 import Home from './home';
+import Header from './header';
 
 
 function App() {
     return (
-       <div>
-            <header>
-                <h1>header area</h1>
-            </header>
+        <>
+            <Header />
 
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path='/books' element={<Books />} />
             </Routes>
 
-       </div>
+        </>
     );
 }
 
