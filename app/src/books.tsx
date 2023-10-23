@@ -5,14 +5,14 @@ import GetPersonalData from "./get-personal-data"
 
 function Books() {
     return  (
-        <div>
+        <>
             <h3>books page</h3>
             <Button component={Link} to="/">
                 home
             </Button>
             <HelloWorld />
             <GetPersonalData />
-        </div>
+        </>
     )
 }
 
