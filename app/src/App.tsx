@@ -15,11 +15,11 @@ function App() {
                     <text>HEADER</text>
                 </Group>
             </AppShell.Header>
-            
-            <Routes>
+            <AppShell.Main>main</AppShell.Main>
+            {/* <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path='/books' element={<Books />} />
-            </Routes>
+            </Routes> */}
 
        </AppShell>
     );
