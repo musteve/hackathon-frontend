@@ -4,8 +4,7 @@ import GetPersonalData from "./get-personal-data"
 function Demo() {
     return (
         <>
-            <HelloWorld />
-            
+            <HelloWorld /> 
             <GetPersonalData />
         </>
     )

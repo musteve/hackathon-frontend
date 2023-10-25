@@ -1,4 +1,4 @@
-import { Button, Group, Menu } from "@mantine/core";
+import { Button, Container, Flex, Group, Menu } from "@mantine/core";
 import { Link } from "react-router-dom";
 import Home from "./home";
 
@@ -12,25 +12,36 @@ function Header() {
         ]
     }
     const menuItemItems = menuItem.items.map((i) => (
-        <Menu.Item key={i.label}>
-            <Button component={Link} to={i.link}>{i.label}</Button>
+        <Menu.Item component={Link} to={i.link}>
+            {i.label}
+            {/* <Button component={Link} to={i.link}>{i.label}</Button>
+            <a
+                href={i.link}
+                onClick={(e) => e.preventDefault()}
+            >{i.label}</a> */}
         </Menu.Item>
     ))
 
 
     return (
         <header>
-            <Group>
-                <Button component={Link} to="/">Home</Button>
-                <Menu trigger="hover" openDelay={100} closeDelay={400}>
-                    <Menu.Target>
-                        <div>{menuItem.label}</div>
-                    </Menu.Target>
-                    <Menu.Dropdown>
-                        {menuItemItems}
-                    </Menu.Dropdown>
-                </Menu>
-            </Group>
+            <Flex 
+                justify="space-between"
+            >
+                <Button variant="transparent" component={Link} to="/">Home</Button>
+                <Flex
+                    justify="flex-end"
+                >
+                    <Menu trigger="hover" openDelay={100} closeDelay={400}>
+                        <Menu.Target>
+                            <a>{menuItem.label}</a>
+                        </Menu.Target>
+                        <Menu.Dropdown>
+                            {menuItemItems}
+                        </Menu.Dropdown>
+                    </Menu>
+                </Flex>
+            </Flex>
         </header>
     )
 }
