@@ -10,8 +10,6 @@ function Books() {
             {/* <Button component={Link} to="/">
                 home
             </Button> */}
-            <HelloWorld />
-            <GetPersonalData />
         </>
     )
 }
