@@ -1,5 +1,5 @@
-import HelloWorld from "./get-hello-world"
-import GetPersonalData from "./get-personal-data"
+import HelloWorld from "../http/get-hello-world"
+import GetPersonalData from "../http/get-personal-data"
 
 function Demo() {
     return (
