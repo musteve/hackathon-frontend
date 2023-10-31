@@ -34,11 +34,10 @@ function InputForm() {
                     },
                     body: JSON.stringify({
                         name: name,
-                        age: age,
+                        age: Number(age),
                     })
                 }
             )
-            console.log("succeded!")
         } catch (err) {
             console.log(err)
         }
