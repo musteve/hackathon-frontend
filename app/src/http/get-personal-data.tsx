@@ -1,4 +1,6 @@
+import { Accordion, Button, Stack, UnstyledButton } from "@mantine/core";
 import { useState, useEffect } from "react";
+import DeletePersonalData from "./delete-personal-data";
 
 type personalData = {
     id: string
@@ -29,8 +31,31 @@ function GetPersonalData() {
         fetchData()
     }, [])
 
-    const list = data.map((e) => <li key={e.id}>{e.name}, {e.age}</li>)
-    return <ul>{list}</ul>
+    const createAccordionItmes = data.map((item) => (
+        <Accordion.Item key={item.id} value={item.name}>
+            <Accordion.Control>
+                {item.name}
+            </Accordion.Control>
+            <Accordion.Panel>
+                <Stack>
+                    <UnstyledButton>{item.age}</UnstyledButton>
+                    <UnstyledButton>{item.name}</UnstyledButton>
+                    <Button>edit</Button>
+                    <DeletePersonalData id={item.id}/>
+                </Stack>
+            </Accordion.Panel>
+        </Accordion.Item>
+    ))
+
+    return (
+        <>
+            <Accordion
+                variant="contained"
+            >{createAccordionItmes}</Accordion>
+        </>
+    ) 
 }
+
+
 
 export default GetPersonalData
