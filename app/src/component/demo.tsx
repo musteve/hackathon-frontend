@@ -58,7 +58,10 @@ function InputForm() {
         <>
             <Modal opened={opened} onClose={close}>
                 <form 
-                    onSubmit={form.onSubmit((values) => {addUser(values.name, values.age)})}
+                    onSubmit={form.onSubmit((values, event) => {
+                        event?.preventDefault()
+                        addUser(values.name, values.age)
+                    })}
                 >
                     <TextInput
                         label="name"
@@ -70,7 +73,7 @@ function InputForm() {
                         placeholder="your age"
                         {...form.getInputProps("age")}
                     ></TextInput>
-                    <Button>close</Button>
+                    <Button type="submit">submit</Button>
                 </form>
             </Modal>
 
