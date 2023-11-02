@@ -30,8 +30,8 @@ function DeletePersonalData(props: {id: string}) {
                     <UnstyledButton>本当に削除しますか？</UnstyledButton>
                     <center>
                         <Button onClick={() => {
-                            close
-                            fetchData
+                            close()
+                            fetchData()
                         }}>Yes</Button>
                         <Button onClick={close}>No</Button>
                     </center>
