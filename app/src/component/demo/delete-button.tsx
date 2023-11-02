@@ -1,6 +1,6 @@
 import { Button, Modal, UnstyledButton } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
-import DeletePersonalData from "./delete-personal-data"
+import DeletePersonalData from "../../http/demo/delete-personal-data"
 
 function DeleteButton(props: {id: string}) {
     const [opened, {open, close}] = useDisclosure(false)

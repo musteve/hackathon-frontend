@@ -1,5 +1,5 @@
-import HelloWorld from "../component/demo/get-hello-world"
-import GetPersonalData from "../component/demo/get-personal-data"
+import HelloWorld from "../http/demo/get-hello-world"
+import GetPersonalData from "../http/demo/get-personal-data"
 import InputForm from "../component/demo/input-form"
 import PersonalDataCards from "../component/demo/personal-data-cards"
 

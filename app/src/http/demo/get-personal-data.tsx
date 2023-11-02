@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import PersonalData from "./type-personal-data";
+import PersonalData from "../../component/demo/type-personal-data";
 
 function GetPersonalData() {
     const [data, setData] = useState<PersonalData[]>([])

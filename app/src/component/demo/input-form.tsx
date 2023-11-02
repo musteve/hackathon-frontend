@@ -1,7 +1,7 @@
 import { Button, Modal, TextInput } from "@mantine/core"
 import { useForm } from "@mantine/form"
 import { useDisclosure } from "@mantine/hooks"
-import AddPersnalData from "./add-personal-data"
+import AddPersnalData from "../../http/demo/add-personal-data"
 
 function InputForm() {
     const [opened, {open, close}] = useDisclosure(false)
