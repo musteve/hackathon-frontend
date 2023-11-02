@@ -1,6 +1,5 @@
-import { Button, Container, Flex, Group, Menu } from "@mantine/core";
+import { Button, Flex, Menu, UnstyledButton } from "@mantine/core";
 import { Link } from "react-router-dom";
-import Home from "./home";
 
 function Header() {
     const menuItem = {
@@ -14,11 +13,6 @@ function Header() {
     const menuItemItems = menuItem.items.map((i) => (
         <Menu.Item component={Link} to={i.link}>
             {i.label}
-            {/* <Button component={Link} to={i.link}>{i.label}</Button>
-            <a
-                href={i.link}
-                onClick={(e) => e.preventDefault()}
-            >{i.label}</a> */}
         </Menu.Item>
     ))
 
@@ -34,7 +28,7 @@ function Header() {
                 >
                     <Menu trigger="hover" openDelay={100} closeDelay={400}>
                         <Menu.Target>
-                            <a>{menuItem.label}</a>
+                            <UnstyledButton>{menuItem.label}</UnstyledButton>
                         </Menu.Target>
                         <Menu.Dropdown>
                             {menuItemItems}
