@@ -1,4 +1,4 @@
-import { Button, Group, Modal, UnstyledButton } from "@mantine/core";
+import { Button, Modal, UnstyledButton } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
 function DeletePersonalData(props: {id: string}) {
@@ -27,7 +27,7 @@ function DeletePersonalData(props: {id: string}) {
         <>
             <Modal opened={opened} onClose={close}>
                 <center>
-                    <UnstyledButton>本当に削除しますか？</UnstyledButton>
+                    <UnstyledButton>Are you sure to delete it?</UnstyledButton>
                     <center>
                         <Button onClick={() => {
                             close()

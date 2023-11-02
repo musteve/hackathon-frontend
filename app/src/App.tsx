@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
-import Books from './component/books';
-import Home from './component/home';
-import Header from './component/header';
-import Demo from './component/demo';
+import Books from './pages/books';
+import Home from './pages/home';
+import Header from './pages/header';
+import Demo from './pages/demo';
 import { AppShell } from '@mantine/core';
 
 

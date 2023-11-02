@@ -1,6 +1,6 @@
 import { useDisclosure } from "@mantine/hooks"
-import HelloWorld from "../http/get-hello-world"
-import GetPersonalData from "../http/get-personal-data"
+import HelloWorld from "../component/demo/get-hello-world"
+import GetPersonalData from "../component/demo/get-personal-data"
 import { Button, Flex, Modal, TextInput } from "@mantine/core"
 import { useForm } from "@mantine/form"
 
