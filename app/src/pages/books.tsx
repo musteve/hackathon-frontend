@@ -1,7 +1,7 @@
 import { Button } from "@mantine/core"
 import { Link } from "react-router-dom"
-import HelloWorld from "../http/get-hello-world"
-import GetPersonalData from "../http/get-personal-data"
+import HelloWorld from "../component/demo/get-hello-world"
+import GetPersonalData from "../component/demo/get-personal-data"
 
 function Books() {
     return  (
