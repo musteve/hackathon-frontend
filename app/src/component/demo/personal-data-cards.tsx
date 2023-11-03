@@ -1,4 +1,4 @@
-import { Accordion, Button, Stack, UnstyledButton } from "@mantine/core";
+import { Accordion, Stack, UnstyledButton } from "@mantine/core";
 import PersonalData from "./type-personal-data";
 import DeleteButton from "./delete-button";
 import EditPersonalData from "./edit-personal-data";

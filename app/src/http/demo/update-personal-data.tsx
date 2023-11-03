@@ -4,7 +4,7 @@ const UpdatePersonalData = async (id: string, name: string, age: string) => {
         await fetch(
             "https://hackathon-backend-main-mxtuefqkua-uc.a.run.app/updateuser",
             {
-                method: "UPDATE",
+                method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
                 },
