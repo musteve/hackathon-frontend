@@ -2,7 +2,7 @@ const AddPersnalData = async (name: string, age: string) => {
     try {
         console.log("posting...")
         await fetch(
-            "https://hackathon-backend-main-mxtuefqkua-uc.a.run.app/adduser",
+            "https://hackathon-backend-main-mxtuefqkua-uc.a.run.app/demo",
             {
                 method: "POST",
                 headers: {
