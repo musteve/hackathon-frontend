@@ -8,7 +8,7 @@ function Demo() {
         <>
             <HelloWorld />
             <InputForm />
-            <PersonalDataCards data={GetPersonalData()} />
+            <PersonalDataCards />
         </>
     )
 }
