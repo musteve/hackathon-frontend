@@ -11,7 +11,7 @@ const UpdatePersonalData = async (id: string, name: string, age: string) => {
                 body: JSON.stringify({
                     id: id,
                     name: name,
-                    age: Number(age),
+                    age: Number(age) || 0,
                 })
             }
         )

@@ -30,11 +30,41 @@ function PersonalDataCards() {
         })
         setData(clone)
     }
+    const FliterBox = () => {
+        const filter = () => {
+            var clone = Array.from(data)
+            const filtered = clone.filter((i) => i.name.includes("o"))
+            setData(filtered)
+        }
+
+        return (
+            <Button
+                onClick={filter}
+            >filter name "o"</Button>
+        )
+    }
 
     const SortBox = () => {
-        const sort = ["creation-day", "name", "age"]
+        const sort = ["creation-day", "last-update", "name", "age"]
         const [sortValue, setSortValue] = useState<string>(sort[0])
 
+
+        const sortControl = () => {
+            switch (sortValue) {
+                case "creation-day": 
+                    sortAsc("id" as keyof PersonalData) 
+                    return
+                case "last-update": 
+                    sortAsc("last_update" as keyof PersonalData)
+                    return
+                case "name": 
+                    sortAsc("name" as keyof PersonalData)
+                    return
+                case "age": 
+                    sortAsc("age" as keyof PersonalData)
+                    return
+            }
+        }
         const sortAsc = (v: keyof PersonalData) => {
             var clone = Array.from(data)
             clone.sort((a, b) => {
@@ -42,19 +72,34 @@ function PersonalDataCards() {
                 else return -1
             })
             setData(clone)
+            // if (sortValue == "name") {
+            //     var clone = Array.from(data)
+            //     clone.sort((a, b) => {
+            //         if (a.name > b.name) return 1
+            //         else return -1
+            //     })
+            //     setData(clone)
+            // } else if (sortValue == "age") {
+            //     var clone = Array.from(data)
+            //     clone.sort((a, b) => {
+            //         if (a.age > b.age) return 1
+            //         else return -1
+            //     })
+            //     setData(clone)
+            // }
         }
         return (
             <Flex>
                 <NativeSelect
                     title="sort"
                     data={sort}
-                    defaultValue={sort[0]}
                     value={sortValue}
                     onChange={(e) => setSortValue(e.currentTarget.value)}
                 ></NativeSelect>
                 <Button 
-                    onClick={() => sortAsc(sortValue as keyof PersonalData)}
+                    onClick={() => sortControl()}
                 ><IconArrowsSort></IconArrowsSort></Button>
+                {sortValue}
             </Flex>
         )
     }
@@ -62,11 +107,12 @@ function PersonalDataCards() {
     const createCards = data.map((item) => (
         <Accordion.Item key={item.id} value={item.name}>
             <Accordion.Control>
-                {item.name}
+                {item.name},{item.age}
             </Accordion.Control>
             <Accordion.Panel>
                 <Stack>
                     <UnstyledButton>{item.id}</UnstyledButton>
+                    <UnstyledButton>{item.last_update}</UnstyledButton>
                     <UnstyledButton>{item.name}</UnstyledButton>
                     <UnstyledButton>{item.age}</UnstyledButton>
 
@@ -80,6 +126,8 @@ function PersonalDataCards() {
     return (
         <>
             <SortBox />
+            <FliterBox />
+            <Button onClick={() => GetPersonalData(setData)}>reset</Button>
             <Button onClick={sortByName}>sortByName</Button>
             <Button onClick={sortByCreation}>sortByCreation</Button>
             <Accordion variant="contained">{createCards}</Accordion>

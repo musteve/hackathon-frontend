@@ -1,5 +1,5 @@
 import { Button, Modal, TextInput } from "@mantine/core"
-import { useForm } from "@mantine/form"
+import { hasLength, isInRange, useForm } from "@mantine/form"
 import { useDisclosure } from "@mantine/hooks"
 import AddPersnalData from "../../http/demo/add-personal-data"
 
@@ -11,13 +11,21 @@ function InputForm() {
             name: "",
             age: "",
         },
+        validate: {
+            name: hasLength({min: 1, max: 50}, "Name must be 1-10 characters long"),
+            age: hasLength({min: 1, max: 3}, "age must be between 1-999")
+        },
+        validateInputOnChange: true
     })
 
     return (
         <>
             <Modal opened={opened} onClose={close}>
                 <form 
-                    onSubmit={form.onSubmit((values) => {AddPersnalData(values.name, values.age)})}
+                    onSubmit={form.onSubmit((values) => {
+                        AddPersnalData(values.name, values.age)
+                        close()
+                    })}
                 >
                     <TextInput
                         label="name"
@@ -29,7 +37,7 @@ function InputForm() {
                         placeholder="your age"
                         {...form.getInputProps("age")}
                     ></TextInput>
-                    <Button type="submit" onClick={close}>submit</Button>
+                    <Button type="submit">submit</Button>
                 </form>
             </Modal>
 

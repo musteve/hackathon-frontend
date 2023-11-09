@@ -10,7 +10,7 @@ const AddPersnalData = async (name: string, age: string) => {
                 },
                 body: JSON.stringify({
                     name: name,
-                    age: Number(age)
+                    age: Number(age) || 0
                 })
             }
         )
