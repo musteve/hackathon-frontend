@@ -22,13 +22,14 @@ function Header() {
             <Flex 
                 justify="space-between"
             >
-                <Button variant="transparent" component={Link} to="/">Home</Button>
+                <Button variant="transparent" component={Link} to="/">UTTC Base</Button>
                 <Flex
-                    justify="flex-end"
+                    justify="center"
+                    px="2rem"
                 >
                     <Menu trigger="hover" openDelay={100} closeDelay={400}>
                         <Menu.Target>
-                            <UnstyledButton>{menuItem.label}</UnstyledButton>
+                            <Button variant="light" color="gray">{menuItem.label}</Button>
                         </Menu.Target>
                         <Menu.Dropdown>
                             {menuItemItems}

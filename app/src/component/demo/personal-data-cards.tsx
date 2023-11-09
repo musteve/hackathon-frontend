@@ -33,7 +33,9 @@ function PersonalDataCards() {
     const FliterBox = () => {
         const filter = () => {
             var clone = Array.from(data)
-            const filtered = clone.filter((i) => i.name.includes("o"))
+            const filtered = clone.filter((i) => {
+                return i.name.includes("o") || i.name.includes("d")
+            })
             setData(filtered)
         }
 
