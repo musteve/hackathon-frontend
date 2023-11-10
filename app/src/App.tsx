@@ -9,7 +9,7 @@ import { AppShell } from '@mantine/core';
 function App() {
     return (
         <AppShell
-            header={{height: 40}}
+            header={{height: 70}}
         >
             <AppShell.Header>
                 <Header />
