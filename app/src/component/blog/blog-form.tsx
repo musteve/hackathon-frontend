@@ -1,20 +1,18 @@
-import { Button, Flex, Modal, TextInput } from "@mantine/core";
-import { hasLength, matches, useForm } from "@mantine/form";
-import { useDisclosure } from "@mantine/hooks";
-import InsertBookData from "../../http/book/insert-book-data";
-import Book from "../../model/book";
+import { Button, Flex, Modal, TextInput } from "@mantine/core"
+import { hasLength, matches, useForm } from "@mantine/form"
+import { useDisclosure } from "@mantine/hooks"
+import Blog from "../../model/blog"
 
-export default BookForm
+export default BlogForm
 
-function BookForm() {
+function BlogForm() {
     const [opened, {open, close}] = useDisclosure(false)
 
     const form = useForm({
         initialValues: {
             title: "",
             author: "",
-            issue_date: "",
-            publisher: "",
+            url: "",
             tag: "",
             description: "",
         },
@@ -58,7 +56,7 @@ function BookForm() {
             <Modal opened={opened} onClose={close} title="register new book">
                 <form 
                     onSubmit={form.onSubmit((values) => {
-                        InsertBookData(values as Book)
+                        InsertBlogData(values as Blog)
                         close()
                     })}
                 >

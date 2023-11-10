@@ -7,6 +7,7 @@ function Header() {
         items: [
             {link: "/", label: "Home"},
             {link: "/books", label: "Books"},
+            {link: "/blogs", label: "Blogs"},
             {link: "/demo", label: "demo"}
         ]
     }

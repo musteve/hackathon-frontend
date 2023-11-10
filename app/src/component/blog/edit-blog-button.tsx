@@ -1,10 +1,10 @@
-import { useDisclosure } from "@mantine/hooks"
-import Book from "../../model/book"
 import { useForm } from "@mantine/form"
+import Blog from "../../model/blog"
+import { useDisclosure } from "@mantine/hooks"
 import { Button, Flex, Modal, TextInput } from "@mantine/core"
-import PutBookData from "../../http/book/put-book-data"
+import PutBlogData from "../../http/blog/put-blog-data"
 
-function EditBookButton(props: {data: Book}) {
+function EditBlogButton(props: {data: Blog}) {
     const [opened, {open, close}] = useDisclosure(false)
 
     const form = useForm({
@@ -12,8 +12,7 @@ function EditBookButton(props: {data: Book}) {
             id: props.data.id,
             title: props.data.title,
             author: props.data.author,
-            issue_date: props.data.issue_date,
-            publisher: props.data.publisher,
+            url: props.data.url,
             tag: props.data.tag,
             description: props.data.description,
         },
@@ -22,10 +21,9 @@ function EditBookButton(props: {data: Book}) {
     const formContent: {label: string, description: string}[] = [
         {label: "title", description: ""},
         {label: "author", description: ""},
-        {label: "issue_date", description: "YYYY-MM-DD"},
-        {label: "publisher", description: ""},
+        {label: "url", description: ""},
+        {label: "tag", description: "半角スペース区切り"},
         {label: "description", description: ""},
-        {label: "tag", description: "半角スペース区切り"}
     ]
 
     const formItems = formContent.map((i) => (
@@ -37,7 +35,7 @@ function EditBookButton(props: {data: Book}) {
             <Modal opened={opened} onClose={close} title="edit">
                 <form
                     onSubmit={form.onSubmit((values) => {
-                        PutBookData(values as Book)
+                        PutBlogData(values as Blog)
                         close()
                     })}
                 >
@@ -53,4 +51,4 @@ function EditBookButton(props: {data: Book}) {
     )
 }
 
-export default EditBookButton
+export default EditBlogButton

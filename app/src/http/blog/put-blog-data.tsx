@@ -1,10 +1,10 @@
-import Book from "../../model/book"
+import Blog from "../../model/blog"
 
-const PutBookData = async (data: Book) => {
+const PutBlogData = async (data: Blog) => {
     try {
         console.log("updateing...")
         await fetch(
-            "https://hackathon-backend-main-mxtuefqkua-uc.a.run.app/book",
+            "https://hackathon-backend-main-mxtuefqkua-uc.a.run.app/blog",
             {
                 method: "PUT",
                 headers: {
@@ -14,8 +14,7 @@ const PutBookData = async (data: Book) => {
                     id: data.id,
                     title: data.title,
                     author: data.author,
-                    issue_date: data.issue_date,
-                    publisher: data.publisher,
+                    url: data.url,
                     tag: data.tag,
                     description: data.description,
                 })
@@ -26,4 +25,4 @@ const PutBookData = async (data: Book) => {
     }
 }
 
-export default PutBookData
+export default PutBlogData
