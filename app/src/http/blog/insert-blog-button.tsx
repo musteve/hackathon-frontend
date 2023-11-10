@@ -1,6 +1,6 @@
-import Book from "../../model/book"
+import Blog from "../../model/blog"
 
-const InsertBookData = async (data: Book) => {
+const InsertBlogData = async (data: Blog) => {
     try {
         console.log("posting...")
         await fetch(
@@ -13,8 +13,7 @@ const InsertBookData = async (data: Book) => {
                 body: JSON.stringify({
                     title: data.title,
                     author: data.author,
-                    issue_date: data.issue_date,
-                    publisher: data.publisher,
+                    url: data.url,
                     tag: data.tag,
                     description: data.description,
                 })
@@ -25,4 +24,4 @@ const InsertBookData = async (data: Book) => {
     }
 }
 
-export default InsertBookData
+export default InsertBlogData

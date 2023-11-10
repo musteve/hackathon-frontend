@@ -2,6 +2,7 @@ import { Button, Flex, Modal, TextInput } from "@mantine/core"
 import { hasLength, matches, useForm } from "@mantine/form"
 import { useDisclosure } from "@mantine/hooks"
 import Blog from "../../model/blog"
+import InsertBlogData from "../../http/blog/insert-blog-button"
 
 export default BlogForm
 
@@ -21,9 +22,7 @@ function BlogForm() {
 
             author: hasLength({min: 1, max: 100}, "Author must be 1-100 characters long"),
 
-            issue_date: matches(/^([0-9]{4}-[0-9]{2}-[0-9]{2}){1}$/, "Invalid input"),
-
-            publisher: hasLength({min: 1, max: 100}, "Publisher must be 1-100 characters long"),
+            url: hasLength({min: 1, max: 1000}, "URL must be 1-1000 characters long"),
 
             description: hasLength({min: 1, max: 1000}, "Description must be 1-1000 characters long \nEven if nothing, enter some text"),
 

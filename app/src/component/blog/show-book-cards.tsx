@@ -6,6 +6,10 @@ import { Link } from "react-router-dom"
 import GetBlogData from "../../http/blog/get-blog-data"
 import EditBlogButton from "./edit-blog-button"
 import DeleteBlogButton from "./delete-blog-button"
+import BlogForm from "./blog-form"
+import ResetBlogButton from "./reset-blog-button"
+import SortBlog from "./sort-blog-button"
+import FliterBlog from "./filter-blog"
 
 function ShowBlogCards() {
     const [data, setData] = useState<Blog[]>([])

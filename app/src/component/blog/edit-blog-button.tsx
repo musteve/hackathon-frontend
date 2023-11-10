@@ -1,4 +1,4 @@
-import { useForm } from "@mantine/form"
+import { hasLength, useForm } from "@mantine/form"
 import Blog from "../../model/blog"
 import { useDisclosure } from "@mantine/hooks"
 import { Button, Flex, Modal, TextInput } from "@mantine/core"
@@ -16,6 +16,25 @@ function EditBlogButton(props: {data: Blog}) {
             tag: props.data.tag,
             description: props.data.description,
         },
+        validate: {
+            title: hasLength({min: 1, max: 100}, "Title must be 1-100 characters long"),
+
+            author: hasLength({min: 1, max: 100}, "Author must be 1-100 characters long"),
+
+            url: hasLength({min: 1, max: 1000}, "URL must be 1-1000 characters long"),
+
+            description: hasLength({min: 1, max: 1000}, "Description must be 1-1000 characters long \nEven if nothing, enter some text"),
+
+            tag: (value) => (
+                value.length === 0 || value.length > 100
+                ? "tag must be 1-100 characters long"
+                : value.includes(" ")
+                ? "space should not be included"
+                : null
+            )
+
+        },
+        validateInputOnChange: true
     })
 
     const formContent: {label: string, description: string}[] = [
