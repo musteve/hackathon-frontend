@@ -1,5 +1,5 @@
 import { Button, Flex, Modal, TextInput } from "@mantine/core"
-import { hasLength, matches, useForm } from "@mantine/form"
+import { hasLength, useForm } from "@mantine/form"
 import { useDisclosure } from "@mantine/hooks"
 import Blog from "../../model/blog"
 import InsertBlogData from "../../http/blog/insert-blog-button"
@@ -33,7 +33,6 @@ function BlogForm() {
                 ? "space should not be included"
                 : null
             )
-
         },
         validateInputOnChange: true
     })
@@ -41,10 +40,9 @@ function BlogForm() {
     const formContent: {label: string, description: string}[] = [
         {label: "title", description: ""},
         {label: "author", description: ""},
-        {label: "issue_date", description: "YYYY-MM-DD"},
-        {label: "publisher", description: ""},
+        {label: "url", description: ""},
+        {label: "tag", description: "comma-sepatated"},
         {label: "description", description: ""},
-        {label: "tag", description: "comma-sepatated"}
     ]
 
     const formItems = formContent.map((i) => (
