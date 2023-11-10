@@ -4,12 +4,13 @@ import Home from './pages/home';
 import Header from './pages/header';
 import Demo from './pages/demo';
 import { AppShell } from '@mantine/core';
+import Blogs from './pages/blogs';
 
 
 function App() {
     return (
         <AppShell
-            header={{height: 40}}
+            header={{height: 70}}
         >
             <AppShell.Header>
                 <Header />
@@ -18,6 +19,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path='/books' element={<Books />} />
+                    <Route path="/blogs" element={<Blogs />} />
                     <Route path="/demo" element={<Demo />} />
                 </Routes>
             </AppShell.Main>

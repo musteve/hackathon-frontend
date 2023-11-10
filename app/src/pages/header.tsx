@@ -1,4 +1,4 @@
-import { Button, Flex, Menu, UnstyledButton } from "@mantine/core";
+import { Button, Flex, Menu } from "@mantine/core";
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -7,6 +7,7 @@ function Header() {
         items: [
             {link: "/", label: "Home"},
             {link: "/books", label: "Books"},
+            {link: "/blogs", label: "Blogs"},
             {link: "/demo", label: "demo"}
         ]
     }
@@ -20,7 +21,7 @@ function Header() {
     return (
         <header>
             <Flex 
-                justify="space-between"
+                justify="space-between" m="1rem"
             >
                 <Button variant="transparent" component={Link} to="/">UTTC Base</Button>
                 <Flex
