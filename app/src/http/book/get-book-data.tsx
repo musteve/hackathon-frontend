@@ -11,7 +11,13 @@ const GetBookData = async (func: React.Dispatch<React.SetStateAction<Book[]>>) =
                 }
             }
         )
-        func(await response.json())
+        const res: Book[] = await response.json()
+        const addTagList = res.map((i) => {
+            const tags = i.tag.split(",")
+            i.tag_list = tags
+            return i
+        })
+        func(addTagList)
     } catch (err) {
         console.log(err)
     }

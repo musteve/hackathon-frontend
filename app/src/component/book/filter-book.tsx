@@ -16,14 +16,14 @@ function FliterBook(props: {
         props.setfunc(filtered)
     }
     return (
-        <Flex>
+        <Flex mx="1rem" mb="1rem">
             <Input
                 placeholder="enter tag here"
                 value={filterBy}
                 onChange={(e) => setFilterBy(e.currentTarget.value)}
             >
             </Input>
-            <Button
+            <Button mx="1rem"
                 onClick={() => filter(filterBy)}
             >
                 Filter

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import GetBookData from "../../http/book/get-book-data"
 import Book from "../../model/book"
-import { Accordion, Container, Flex, Stack, UnstyledButton } from "@mantine/core"
+import { Accordion, Badge, Container, Flex, Stack, UnstyledButton } from "@mantine/core"
 import DeleteBookButton from "./delete-book-button"
 import EditBookButton from "./edit-book-button"
 import BookForm from "./book-form"
@@ -19,7 +19,26 @@ function ShowBookCards() {
     const createCards = data.map((i) => (
         <Accordion.Item key={i.id} value={i.title}>
             <Accordion.Control>
-                {i.title}, last-update:{i.last_update_date}
+                <Stack mx="1rem">
+                    <Flex justify="space-between" ml="1rem">
+                        <UnstyledButton fz={"lg"} fw={800}>
+                            {i.title}
+                        </UnstyledButton>
+                        <UnstyledButton c="dimmed">
+                            last-update: {i.last_update_date} 
+                        </UnstyledButton>
+                    </Flex>
+                    <Badge fz="xs" fw={700} variant="light">
+                        {i.tag_list}
+                    </Badge>
+                    {i.tag_list.map((e) => (
+                        <Badge fz="xs" fw={700} variant="light">{e}</Badge>
+                    ))}
+                    <Flex fz="sm">
+                        {i.author}, {i.publisher}, {i.issue_date}
+                    </Flex>
+                </Stack>
+                {/* {i.title}, last-update:{i.last_update_date} */}
             </Accordion.Control>
             <Accordion.Panel>
                 <Stack>
