@@ -28,12 +28,11 @@ function ShowBookCards() {
                             last-update: {i.last_update_date} 
                         </UnstyledButton>
                     </Flex>
-                    <Badge fz="xs" fw={700} variant="light">
-                        {i.tag_list}
-                    </Badge>
-                    {i.tag_list.map((e) => (
-                        <Badge fz="xs" fw={700} variant="light">{e}</Badge>
-                    ))}
+                    <Flex>
+                        {i.tag_list.map((e) => (
+                            <Badge fz="xs" fw={700} variant="light">{e}</Badge>
+                        ))}
+                    </Flex>
                     <Flex fz="sm">
                         {i.author}, {i.publisher}, {i.issue_date}
                     </Flex>
