@@ -37,17 +37,10 @@ function ShowBookCards() {
                         {i.author}, {i.publisher}, {i.issue_date}
                     </Flex>
                 </Stack>
-                {/* {i.title}, last-update:{i.last_update_date} */}
             </Accordion.Control>
             <Accordion.Panel>
                 <Stack>
-                    <UnstyledButton>
-                        author: {i.author}, 
-                        publisher: {i.publisher}, 
-                        issue_date: {i.issue_date}
-                    </UnstyledButton>
-                    <UnstyledButton>tag: {i.tag}</UnstyledButton>
-                    <UnstyledButton>description: {i.description}</UnstyledButton>
+                    <UnstyledButton>{i.description}</UnstyledButton>
                     <Flex>
                         <EditBookButton data={i}/>
                         <DeleteBookButton id={i.id}/>

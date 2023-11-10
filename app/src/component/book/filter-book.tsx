@@ -11,7 +11,7 @@ function FliterBook(props: {
     const filter = (by: string) => {
         var clone = Array.from(props.data)
         const filtered = clone.filter((i) => {
-            return i.tag.includes("," + by) || i.tag.includes(by + ",")
+            return i.tag.includes(by.toLocaleLowerCase())
         })
         props.setfunc(filtered)
     }
@@ -20,7 +20,7 @@ function FliterBook(props: {
             <Input
                 placeholder="enter tag here"
                 value={filterBy}
-                onChange={(e) => setFilterBy(e.currentTarget.value)}
+                onChange={(e) => setFilterBy(e.currentTarget.value.toLocaleLowerCase())}
             >
             </Input>
             <Button mx="1rem"
