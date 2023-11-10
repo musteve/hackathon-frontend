@@ -18,18 +18,17 @@ function ShowBlogCards() {
         GetBlogData(setData)
     }, [])
 
+
     const createCards = data.map((i) => (
         <Accordion.Item key={i.id} value={i.title}>
             <Accordion.Control>
-                <Stack mx="1rem">
-                    <Flex justify="space-between" ml="1rem">
-                        <UnstyledButton fz={"lg"} fw={800}>
-                            {i.title}
-                        </UnstyledButton>
-                        <UnstyledButton c="dimmed">
-                            last-update: {i.last_update_date} 
-                        </UnstyledButton>
-                    </Flex>
+                <Stack mx="0.5rem">
+                    <UnstyledButton c="dimmed" fz="xs">
+                        last-update: {i.last_update_date} 
+                    </UnstyledButton>
+                    <UnstyledButton fz={"lg"} fw={800}>
+                        {i.title}
+                    </UnstyledButton>
                     <Flex>
                         {i.tag_list.map((e) => (
                             <Badge fz="xs" fw={700} variant="light">{e}</Badge>

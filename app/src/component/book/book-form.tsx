@@ -46,8 +46,8 @@ function BookForm() {
         {label: "author", description: ""},
         {label: "issue_date", description: "YYYY-MM-DD"},
         {label: "publisher", description: ""},
+        {label: "tag", description: "comma-sepatated"},
         {label: "description", description: ""},
-        {label: "tag", description: "comma-sepatated"}
     ]
 
     const formItems = formContent.map((i) => (
