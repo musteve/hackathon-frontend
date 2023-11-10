@@ -4,7 +4,7 @@ const InsertBlogData = async (data: Blog) => {
     try {
         console.log("posting...")
         await fetch(
-            "https://hackathon-backend-main-mxtuefqkua-uc.a.run.app/book",
+            "https://hackathon-backend-main-mxtuefqkua-uc.a.run.app/blog",
             {
                 method: "POST",
                 headers: {
