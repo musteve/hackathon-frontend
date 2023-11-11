@@ -13,7 +13,7 @@ function DeleteBookButton(props: {id: string}) {
                         <UnstyledButton>Are you sure to delete it?</UnstyledButton>
                     </Flex>
                     <Flex justify="space-around" mx="6rem">
-                        <Button onClick={() => {
+                        <Button variant="light" onClick={() => {
                             DeleteBookData(props.id)
                             close()
                         }}>Yes</Button>

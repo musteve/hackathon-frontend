@@ -21,16 +21,27 @@ function Header() {
     return (
         <header>
             <Flex 
-                justify="space-between" m="1rem"
+                justify="space-between" my="1rem"
             >
-                <Button variant="transparent" component={Link} to="/">UTTC Base</Button>
+                <Button 
+                    component={Link} 
+                    to="/"
+                    variant="transparent" 
+                    fz="xl"
+                    fw={900}
+                    pl="2rem" 
+                >UTTC Base</Button>
                 <Flex
                     justify="center"
-                    px="2rem"
+                    pr="1rem"
                 >
                     <Menu trigger="hover" openDelay={100} closeDelay={400}>
                         <Menu.Target>
-                            <Button variant="light" color="gray">{menuItem.label}</Button>
+                            <Button 
+                                variant="light" 
+                                color="gray"
+                                fw={700}
+                            >{menuItem.label}</Button>
                         </Menu.Target>
                         <Menu.Dropdown>
                             {menuItemItems}
