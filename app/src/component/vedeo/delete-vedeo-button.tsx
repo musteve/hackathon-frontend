@@ -1,8 +1,8 @@
 import { Button, Flex, Modal, Stack, UnstyledButton } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
-import DeleteBlogData from "../../http/blog/delete-blog-data"
+import DeleteVedeoData from "../../http/vedeo/delete-vedeo-data"
 
-function DeleteBlogButton(props: {id: string}) {
+function DeleteVedeoButton(props: {id: string}) {
     const [opened, {open, close}] = useDisclosure(false)
 
     return (
@@ -14,7 +14,7 @@ function DeleteBlogButton(props: {id: string}) {
                     </Flex>
                     <Flex justify="space-around" mx="6rem">
                         <Button variant="light" onClick={() => {
-                            DeleteBlogData(props.id)
+                            DeleteVedeoData(props.id)
                             close()
                         }}>Yes</Button>
                         <Button onClick={close}>No</Button>
@@ -27,4 +27,4 @@ function DeleteBlogButton(props: {id: string}) {
     )
 }
 
-export default DeleteBlogButton
+export default DeleteVedeoButton
