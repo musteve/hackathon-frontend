@@ -1,7 +1,10 @@
 import { Button, Flex, Menu } from "@mantine/core";
 import { Link } from "react-router-dom";
+import LogoutButton from "../component/auth/logout-button";
+import { useAuthContext } from "../context/auth-context";
 
 function Header() {
+    const loginUser = useAuthContext()
     const menuItem = {
         label: "Item",
         items: [
@@ -36,6 +39,7 @@ function Header() {
                     justify="center"
                     pr="1rem"
                 >
+                    {loginUser ? <LogoutButton />: null}
                     <Menu trigger="hover" openDelay={100} closeDelay={400}>
                         <Menu.Target>
                             <Button 

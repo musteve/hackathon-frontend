@@ -42,7 +42,7 @@ function ShowBlogCards() {
                     
                     <Flex>
                         {i.tag_list.map((e) => (
-                            <Badge fz="xs" fw={700} variant="light">{e}</Badge>
+                            <Badge fz="xs" fw={700} variant="light" mr="0.5rem">{e}</Badge>
                         ))}
                     </Flex>
                     <UnstyledButton fz="sm">

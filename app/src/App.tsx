@@ -6,26 +6,31 @@ import Demo from './pages/demo';
 import { AppShell } from '@mantine/core';
 import Blogs from './pages/blogs';
 import Vedeos from './pages/vedeos';
+import { AuthProvider } from './context/auth-context';
 
 
 function App() {
+    
+
     return (
-        <AppShell
-            header={{height: 70}}
-        >
-            <AppShell.Header>
-                <Header />
-            </AppShell.Header>
-            <AppShell.Main>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path='/books' element={<Books />} />
-                    <Route path="/blogs" element={<Blogs />} />
-                    <Route path="/vedeos" element={<Vedeos />} />
-                    <Route path="/demo" element={<Demo />} />
-                </Routes>
-            </AppShell.Main>
-        </AppShell>
+        <AuthProvider>
+            <AppShell
+                header={{height: 70}}
+            >
+                <AppShell.Header>
+                    <Header />
+                </AppShell.Header>
+                <AppShell.Main>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path='/books' element={<Books />} />
+                        <Route path="/blogs" element={<Blogs />} />
+                        <Route path="/vedeos" element={<Vedeos />} />
+                        <Route path="/demo" element={<Demo />} />
+                    </Routes>
+                </AppShell.Main>
+            </AppShell>
+        </AuthProvider>
     )
 }
 

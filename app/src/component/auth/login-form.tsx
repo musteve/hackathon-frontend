@@ -1,6 +1,6 @@
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import React, { useState } from "react";
-import { fireAuth } from "../firebase";
+import { fireAuth } from "../../firebase";
 import { Button } from "@mantine/core";
 
 export const LoginForm: React.FC = () => {
@@ -24,23 +24,11 @@ export const LoginForm: React.FC = () => {
             })
     }
 
-    
-    const signOutWithGoogle = () => {
-        signOut(fireAuth).then(() => {
-            alert("Successfully logged out")
-        }).catch(err => {
-            alert(err)
-        })
-    }
-
     return (
         <>
             {loginUser ? "in" : "out"}
             <Button onClick={signInWithGoogle}>
                 Sign in with Google
-            </Button>
-            <Button onClick={signOutWithGoogle}>
-                Log out
             </Button>
         </>
     )
