@@ -1,21 +1,20 @@
-import { Button, Flex, Modal, TextInput } from "@mantine/core"
 import { hasLength, useForm } from "@mantine/form"
+import Vedeo from "../../model/vedeo"
 import { useDisclosure } from "@mantine/hooks"
-import Blog from "../../model/blog"
-import InsertBlogData from "../../http/blog/insert-blog-data"
+import { Button, Flex, Modal, TextInput } from "@mantine/core"
+import PutVedeoData from "../../http/vedeo/put-vedeo-data"
 
-export default BlogForm
-
-function BlogForm() {
+function EditVedeoButton(props: {data: Vedeo}) {
     const [opened, {open, close}] = useDisclosure(false)
 
     const form = useForm({
         initialValues: {
-            title: "",
-            author: "",
-            url: "",
-            tag: "",
-            description: "",
+            id: props.data.id,
+            title: props.data.title,
+            author: props.data.author,
+            url: props.data.url,
+            tag: props.data.tag,
+            description: props.data.description,
         },
         validate: {
             title: hasLength({min: 1, max: 100}, "Title must be 1-100 characters long"),
@@ -33,6 +32,7 @@ function BlogForm() {
                 ? "space should not be included"
                 : null
             )
+
         },
         validateInputOnChange: true
     })
@@ -41,19 +41,20 @@ function BlogForm() {
         {label: "title", description: ""},
         {label: "author", description: ""},
         {label: "url", description: ""},
-        {label: "tag", description: "comma-sepatated"},
+        {label: "tag", description: "半角スペース区切り"},
         {label: "description", description: ""},
     ]
 
     const formItems = formContent.map((i) => (
         <TextInput label={i.label} description={i.description} {...form.getInputProps(i.label)}></TextInput>
     ))
+
     return (
         <>
-            <Modal opened={opened} onClose={close} title="register new blog" size="auto">
-                <form 
+            <Modal opened={opened} onClose={close} title="edit">
+                <form
                     onSubmit={form.onSubmit((values) => {
-                        InsertBlogData(values as Blog)
+                        PutVedeoData(values as Vedeo)
                         close()
                     })}
                 >
@@ -63,7 +64,10 @@ function BlogForm() {
                     </Flex>
                 </form>
             </Modal>
-            <Button onClick={open} m="1rem">New</Button>
+
+            <Button onClick={open} m="1rem">Edit</Button>
         </>
     )
 }
+
+export default EditVedeoButton

@@ -1,12 +1,12 @@
 import { Button, Flex, Modal, TextInput } from "@mantine/core"
 import { hasLength, useForm } from "@mantine/form"
 import { useDisclosure } from "@mantine/hooks"
-import Blog from "../../model/blog"
-import InsertBlogData from "../../http/blog/insert-blog-data"
+import Vedeo from "../../model/vedeo"
+import InsertVedeoData from "../../http/vedeo/insert-vedeo-data"
 
-export default BlogForm
+export default VedeoForm
 
-function BlogForm() {
+function VedeoForm() {
     const [opened, {open, close}] = useDisclosure(false)
 
     const form = useForm({
@@ -50,10 +50,10 @@ function BlogForm() {
     ))
     return (
         <>
-            <Modal opened={opened} onClose={close} title="register new blog" size="auto">
+            <Modal opened={opened} onClose={close} title="register new vedeo" size="auto">
                 <form 
                     onSubmit={form.onSubmit((values) => {
-                        InsertBlogData(values as Blog)
+                        InsertVedeoData(values as Vedeo)
                         close()
                     })}
                 >

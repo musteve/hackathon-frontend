@@ -20,6 +20,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path='/books' element={<Books />} />
                     <Route path="/blogs" element={<Blogs />} />
+                    <Route path="/vedeos" element={<Vedeos />} />
                     <Route path="/demo" element={<Demo />} />
                 </Routes>
             </AppShell.Main>
