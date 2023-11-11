@@ -50,7 +50,7 @@ function BlogForm() {
     ))
     return (
         <>
-            <Modal opened={opened} onClose={close} title="register new book">
+            <Modal opened={opened} onClose={close} title="register new blog" size="auto">
                 <form 
                     onSubmit={form.onSubmit((values) => {
                         InsertBlogData(values as Blog)

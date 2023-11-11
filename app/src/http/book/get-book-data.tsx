@@ -14,6 +14,7 @@ const GetBookData = async (func: React.Dispatch<React.SetStateAction<Book[]>>) =
         const res: Book[] = await response.json()
         const addTagList = res.map((i) => {
             const tags = i.tag.split(",")
+            tags.sort((a, b) => {if (a > b) return 1; else return -1})
             i.tag_list = tags
             return i
         })

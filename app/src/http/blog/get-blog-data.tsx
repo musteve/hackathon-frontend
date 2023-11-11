@@ -14,6 +14,7 @@ const GetBlogData = async (func: React.Dispatch<React.SetStateAction<Blog[]>>) =
         const res: Blog[] = await response.json()
         const addTagList = res.map((i) => {
             const tags = i.tag.split(",")
+            tags.sort((a, b) => {if (a > b) return 1; else return -1})
             i.tag_list = tags
             return i
         })

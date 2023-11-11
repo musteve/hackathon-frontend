@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import Blog from "../../model/blog"
 import { Accordion, Badge, Button, Container, Flex, Stack, UnstyledButton } from "@mantine/core"
 import { IconExternalLink } from "@tabler/icons-react"
-import { Link } from "react-router-dom"
 import GetBlogData from "../../http/blog/get-blog-data"
 import EditBlogButton from "./edit-blog-button"
 import DeleteBlogButton from "./delete-blog-button"
@@ -23,12 +22,24 @@ function ShowBlogCards() {
         <Accordion.Item key={i.id} value={i.title}>
             <Accordion.Control>
                 <Stack mx="0.5rem">
-                    <UnstyledButton c="dimmed" fz="xs">
-                        last-update: {i.last_update_date} 
-                    </UnstyledButton>
+                    <Flex justify="space-between">
+                        <UnstyledButton c="dimmed" fz="xs">
+                            last-update: {i.last_update_date} 
+                        </UnstyledButton>
+                        <Button 
+                            component="a" 
+                            href={i.url} 
+                            size="xs"
+                            variant="transparent"
+                        >
+                            <IconExternalLink />
+                        </Button>
+                    </Flex>
+
                     <UnstyledButton fz={"lg"} fw={800}>
                         {i.title}
                     </UnstyledButton>
+                    
                     <Flex>
                         {i.tag_list.map((e) => (
                             <Badge fz="xs" fw={700} variant="light">{e}</Badge>
@@ -37,9 +48,6 @@ function ShowBlogCards() {
                     <UnstyledButton fz="sm">
                         {i.author}
                     </UnstyledButton>
-                    <Button component={Link} to={i.url}>
-                        <IconExternalLink />
-                    </Button>
                 </Stack>
             </Accordion.Control>
             <Accordion.Panel>
