@@ -8,6 +8,7 @@ function Header() {
             {link: "/", label: "Home"},
             {link: "/books", label: "Books"},
             {link: "/blogs", label: "Blogs"},
+            {link: "/vedeos", label: "Vdeos"},
             {link: "/demo", label: "demo"}
         ]
     }

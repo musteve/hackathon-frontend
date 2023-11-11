@@ -1,4 +1,4 @@
-import { Button, Flex, Modal, TextInput } from "@mantine/core";
+import { Button, Flex, Modal, ScrollArea, TextInput } from "@mantine/core";
 import { hasLength, matches, useForm } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
 import InsertBookData from "../../http/book/insert-book-data";
@@ -55,18 +55,20 @@ function BookForm() {
     ))
     return (
         <>
-            <Modal opened={opened} onClose={close} title="register new book">
-                <form 
-                    onSubmit={form.onSubmit((values) => {
-                        InsertBookData(values as Book)
-                        close()
-                    })}
-                >
-                    {formItems}
-                    <Flex justify="flex-end" p="1rem">
-                        <Button type="submit" >submit</Button>
-                    </Flex>
-                </form>
+            <Modal opened={opened} onClose={close} title="register new book" size="lg">
+                <ScrollArea>
+                    <form 
+                        onSubmit={form.onSubmit((values) => {
+                            InsertBookData(values as Book)
+                            close()
+                        })}
+                    >
+                        {formItems}
+                        <Flex justify="flex-end" p="1rem">
+                            <Button type="submit" >submit</Button>
+                        </Flex>
+                    </form>
+                </ScrollArea>
             </Modal>
             <Button onClick={open} m="1rem">New</Button>
         </>

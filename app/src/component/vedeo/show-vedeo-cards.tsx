@@ -3,6 +3,12 @@ import { IconExternalLink } from "@tabler/icons-react"
 import { useEffect, useState } from "react"
 import Vedeo from "../../model/vedeo"
 import GetVedeoData from "../../http/vedeo/get-vedeo-data"
+import EditVedeoButton from "./edit-vedeo-button"
+import DeleteVedeoButton from "./delete-vedeo-button"
+import VedeoForm from "./vedeo-form"
+import ResetVedeoButton from "./reset-vedeo-button"
+import FliterVedeo from "./fliter-vedeo-button"
+import SortVedeo from "./sort-vdeo-button"
 
 function ShowVedeoCards() {
     const [data, setData] = useState<Vedeo[]>([])
