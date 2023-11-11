@@ -1,4 +1,4 @@
-import { Button, Flex, Modal, TextInput } from "@mantine/core"
+import { Button, Flex, Modal, ScrollArea, TextInput } from "@mantine/core"
 import { hasLength, useForm } from "@mantine/form"
 import { useDisclosure } from "@mantine/hooks"
 import Vedeo from "../../model/vedeo"
@@ -50,18 +50,20 @@ function VedeoForm() {
     ))
     return (
         <>
-            <Modal opened={opened} onClose={close} title="register new vedeo" size="auto">
-                <form 
-                    onSubmit={form.onSubmit((values) => {
-                        InsertVedeoData(values as Vedeo)
-                        close()
-                    })}
-                >
-                    {formItems}
-                    <Flex justify="flex-end" p="1rem">
-                        <Button type="submit" >submit</Button>
-                    </Flex>
-                </form>
+            <Modal opened={opened} onClose={close} title="register new vedeo" size="lg">
+                <ScrollArea>
+                    <form 
+                        onSubmit={form.onSubmit((values) => {
+                            InsertVedeoData(values as Vedeo)
+                            close()
+                        })}
+                    >
+                        {formItems}
+                        <Flex justify="flex-end" p="1rem">
+                            <Button type="submit" >submit</Button>
+                        </Flex>
+                    </form>
+                </ScrollArea>
             </Modal>
             <Button onClick={open} m="1rem">New</Button>
         </>

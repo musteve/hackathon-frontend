@@ -1,4 +1,4 @@
-import { Button, Flex, Modal, TextInput } from "@mantine/core"
+import { Button, Flex, Modal, ScrollArea, TextInput } from "@mantine/core"
 import { hasLength, useForm } from "@mantine/form"
 import { useDisclosure } from "@mantine/hooks"
 import Blog from "../../model/blog"
@@ -50,18 +50,20 @@ function BlogForm() {
     ))
     return (
         <>
-            <Modal opened={opened} onClose={close} title="register new blog" size="auto">
-                <form 
-                    onSubmit={form.onSubmit((values) => {
-                        InsertBlogData(values as Blog)
-                        close()
-                    })}
-                >
-                    {formItems}
-                    <Flex justify="flex-end" p="1rem">
-                        <Button type="submit" >submit</Button>
-                    </Flex>
-                </form>
+            <Modal opened={opened} onClose={close} title="register new blog" size="lg">
+                <ScrollArea>
+                    <form 
+                        onSubmit={form.onSubmit((values) => {
+                            InsertBlogData(values as Blog)
+                            close()
+                        })}
+                    >
+                        {formItems}
+                        <Flex justify="flex-end" p="1rem">
+                            <Button type="submit" >submit</Button>
+                        </Flex>
+                    </form>
+                </ScrollArea>
             </Modal>
             <Button onClick={open} m="1rem">New</Button>
         </>

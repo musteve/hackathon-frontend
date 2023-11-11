@@ -5,6 +5,7 @@ import Header from './pages/header';
 import Demo from './pages/demo';
 import { AppShell } from '@mantine/core';
 import Blogs from './pages/blogs';
+import Vedeos from './pages/vedeos';
 
 
 function App() {
