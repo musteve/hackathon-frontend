@@ -7,6 +7,7 @@ import { AppShell } from '@mantine/core';
 import Blogs from './pages/blogs';
 import Vedeos from './pages/vedeos';
 import { AuthProvider } from './context/auth-context';
+import Curriculums from './pages/curriculums';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                         <Route path='/books' element={<Books />} />
                         <Route path="/blogs" element={<Blogs />} />
                         <Route path="/vedeos" element={<Vedeos />} />
+                        <Route path="/curriculums" element={<Curriculums />} />
                         <Route path="/demo" element={<Demo />} />
                     </Routes>
                 </AppShell.Main>

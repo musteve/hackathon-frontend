@@ -12,7 +12,8 @@ function Header() {
             {link: "/books", label: "Books"},
             {link: "/blogs", label: "Blogs"},
             {link: "/vedeos", label: "Vdeos"},
-            {link: "/demo", label: "demo"}
+            {link: "/curriculums", label: "Curriculum"},
+            {link: "/demo", label: "Demo"}
         ]
     }
     const menuItemItems = menuItem.items.map((i) => (
