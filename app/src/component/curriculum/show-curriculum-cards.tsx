@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import Curriculum from "../../model/curriculum"
-import { Accordion, Badge, Button, Container, Flex, Stack, UnstyledButton } from "@mantine/core"
+import { Accordion, Badge, Button, Container, Flex, Space, Stack, Text, Title, UnstyledButton } from "@mantine/core"
 import { IconExternalLink } from "@tabler/icons-react"
 import EditCurriculumButton from "./edit-curriculum-button"
 import DeleteCurriculumButton from "./delete-curriculum-button"
@@ -15,8 +15,6 @@ function ShowCurriculumCards() {
     
     useEffect(() => {
         GetCurriculumData(setData)
-        console.log("curriclum")
-
     }, [])
 
 
@@ -47,8 +45,8 @@ function ShowCurriculumCards() {
                             <Badge fz="xs" fw={700} variant="light" mr="0.5rem">{e}</Badge>
                         ))}
                     </Flex>
-                    <UnstyledButton fz="sm">
-                        {i.chapter}
+                    <UnstyledButton fz="sm" fw={600}>
+                        CHAPTER: {i.chapter}
                     </UnstyledButton>
                 </Stack>
             </Accordion.Control>
@@ -66,6 +64,10 @@ function ShowCurriculumCards() {
 
     return (
         <Container>
+            <Space h="sm" />
+            <Title ml="2rem">Curriculum</Title>
+            <Space h="md" />
+            <Text>Enjoy exploring contents!</Text>
             <CurriculumForm />
             <ResetCurriculumButton setfunc={setData}/>
             <SortCurriculum data={data} setfunc={setData}/>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import Blog from "../../model/blog"
-import { Accordion, Badge, Button, Container, Flex, Stack, UnstyledButton } from "@mantine/core"
+import { Accordion, Badge, Button, Container, Flex, Space, Stack, Text, Title, UnstyledButton } from "@mantine/core"
 import { IconExternalLink } from "@tabler/icons-react"
 import GetBlogData from "../../http/blog/get-blog-data"
 import EditBlogButton from "./edit-blog-button"
@@ -64,6 +64,10 @@ function ShowBlogCards() {
 
     return (
         <Container>
+            <Space h="sm" />
+            <Title ml="2rem">Blog</Title>
+            <Space h="md" />
+            <Text>Enjoy exploring contents!</Text>
             <BlogForm />
             <ResetBlogButton setfunc={setData}/>
             <SortBlog data={data} setfunc={setData}/>

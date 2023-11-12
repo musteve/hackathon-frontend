@@ -1,10 +1,12 @@
-import { LoginForm } from "../component/auth/login-form"
+import { Container, Text, Title } from "@mantine/core"
 
 function Home() {
     return (
-        <>
-            <h4>home page</h4>
-            <LoginForm />
+        <>  
+            <Container>
+                <Title mt="1rem" ml="1rem">Welcom to UTTC Base</Title>
+                <Text></Text>
+            </Container>
         </>
     )
 }

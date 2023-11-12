@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import GetBookData from "../../http/book/get-book-data"
 import Book from "../../model/book"
-import { Accordion, Badge, Container, Flex, Stack, UnstyledButton } from "@mantine/core"
+import { Accordion, Badge, Container, Flex, Space, Stack, Text, Title, UnstyledButton } from "@mantine/core"
 import DeleteBookButton from "./delete-book-button"
 import EditBookButton from "./edit-book-button"
 import BookForm from "./book-form"
@@ -50,6 +50,10 @@ function ShowBookCards() {
 
     return (
         <Container>
+            <Space h="sm" />
+            <Title ml="2rem">Book</Title>
+            <Space h="md" />
+            <Text>Enjoy exploring contents!</Text>
             <BookForm />
             <ResetBookButton setfunc={setData}/>
             <SortBook data={data} setfunc={setData}/>

@@ -8,6 +8,7 @@ import Blogs from './pages/blogs';
 import Vedeos from './pages/vedeos';
 import { AuthProvider } from './context/auth-context';
 import Curriculums from './pages/curriculums';
+import Page404 from './pages/page404';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
                         <Route path="/vedeos" element={<Vedeos />} />
                         <Route path="/curriculums" element={<Curriculums />} />
                         <Route path="/demo" element={<Demo />} />
+                        <Route path="*" element={<Page404 />} />
                     </Routes>
                 </AppShell.Main>
             </AppShell>

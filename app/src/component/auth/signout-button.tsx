@@ -2,7 +2,7 @@ import { signOut } from "firebase/auth"
 import { fireAuth } from "../../firebase"
 import { Button } from "@mantine/core"
 
-function LogoutButton() {
+function SignoutButton() {
     const signOutWithGoogle = () => {
         signOut(fireAuth).then(() => {
             alert("Successfully logged out")
@@ -17,10 +17,11 @@ function LogoutButton() {
             color="gray"
             variant="light"
             mr="0.5rem"
+            fw={700}
         >
             sign out
         </Button>
     )
 }
 
-export default LogoutButton
+export default SignoutButton

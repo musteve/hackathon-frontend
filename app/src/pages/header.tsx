@@ -1,7 +1,10 @@
 import { Button, Flex, Menu } from "@mantine/core";
 import { Link } from "react-router-dom";
-import LogoutButton from "../component/auth/logout-button";
+import SignoutButton from "../component/auth/signout-button";
 import { useAuthContext } from "../context/auth-context";
+import SignupEmail from "../component/auth/signup-email";
+import SigninGoogle from "../component/auth/signin-google";
+import SigninEmail from "../component/auth/signin-email";
 
 function Header() {
     const loginUser = useAuthContext()
@@ -26,7 +29,8 @@ function Header() {
     return (
         <header>
             <Flex 
-                justify="space-between" my="1rem"
+                justify="space-between"
+                mt="1rem"
             >
                 <Button 
                     component={Link} 
@@ -40,7 +44,14 @@ function Header() {
                     justify="center"
                     pr="1rem"
                 >
-                    {loginUser ? <LogoutButton />: null}
+                    {loginUser 
+                    ? <SignoutButton />
+                    : <>
+                        <SignupEmail /> 
+                        <SigninEmail />
+                        <SigninGoogle /> 
+                    </>}
+
                     <Menu trigger="hover" openDelay={100} closeDelay={400}>
                         <Menu.Target>
                             <Button 
