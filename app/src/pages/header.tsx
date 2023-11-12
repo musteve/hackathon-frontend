@@ -1,7 +1,13 @@
 import { Button, Flex, Menu } from "@mantine/core";
 import { Link } from "react-router-dom";
+import SignoutButton from "../component/auth/signout-button";
+import { useAuthContext } from "../context/auth-context";
+import SignupEmail from "../component/auth/signup-email";
+import SigninGoogle from "../component/auth/signin-google";
+import SigninEmail from "../component/auth/signin-email";
 
 function Header() {
+    const loginUser = useAuthContext()
     const menuItem = {
         label: "Item",
         items: [
@@ -9,7 +15,8 @@ function Header() {
             {link: "/books", label: "Books"},
             {link: "/blogs", label: "Blogs"},
             {link: "/vedeos", label: "Vdeos"},
-            {link: "/demo", label: "demo"}
+            {link: "/curriculums", label: "Curriculum"},
+            {link: "/demo", label: "Demo"}
         ]
     }
     const menuItemItems = menuItem.items.map((i) => (
@@ -22,7 +29,8 @@ function Header() {
     return (
         <header>
             <Flex 
-                justify="space-between" my="1rem"
+                justify="space-between"
+                mt="1rem"
             >
                 <Button 
                     component={Link} 
@@ -36,6 +44,14 @@ function Header() {
                     justify="center"
                     pr="1rem"
                 >
+                    {loginUser 
+                    ? <SignoutButton />
+                    : <>
+                        <SignupEmail /> 
+                        <SigninEmail />
+                        <SigninGoogle /> 
+                    </>}
+
                     <Menu trigger="hover" openDelay={100} closeDelay={400}>
                         <Menu.Target>
                             <Button 

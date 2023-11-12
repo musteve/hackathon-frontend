@@ -1,7 +1,7 @@
-import ShowBookCards from "../component/book/show-book-cards"
+import ShowCurriculumCards from "../component/curriculum/show-curriculum-cards"
 import { useAuthContext } from "../context/auth-context"
 
-function Books() {
+function Curriculums() {
     const loginUser = useAuthContext()
 
     if (!loginUser) {
@@ -13,10 +13,10 @@ function Books() {
     } else {
         return  (
             <>
-                <ShowBookCards />
+                <ShowCurriculumCards />
             </>
         )
     }
 }
 
-export default Books
+export default Curriculums

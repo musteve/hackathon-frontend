@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react"
-import Blog from "../../model/blog"
+import Curriculum from "../../model/curriculum"
 import { Accordion, Badge, Button, Container, Flex, Space, Stack, Text, Title, UnstyledButton } from "@mantine/core"
 import { IconExternalLink } from "@tabler/icons-react"
-import GetBlogData from "../../http/blog/get-blog-data"
-import EditBlogButton from "./edit-blog-button"
-import DeleteBlogButton from "./delete-blog-button"
-import BlogForm from "./blog-form"
-import ResetBlogButton from "./reset-blog-button"
-import SortBlog from "./sort-blog-button"
-import FliterBlog from "./filter-blog"
+import EditCurriculumButton from "./edit-curriculum-button"
+import DeleteCurriculumButton from "./delete-curriculum-button"
+import CurriculumForm from "./curriculum-form"
+import ResetCurriculumButton from "./reset-curriculum-button"
+import SortCurriculum from "./sort-curriculum-button"
+import GetCurriculumData from "../../http/curriculum/get-curriculum-data."
+import FliterCurriculum from "./fliter-curriculum"
 
-function ShowBlogCards() {
-    const [data, setData] = useState<Blog[]>([])
+function ShowCurriculumCards() {
+    const [data, setData] = useState<Curriculum[]>([])
     
     useEffect(() => {
-        GetBlogData(setData)
+        GetCurriculumData(setData)
     }, [])
 
 
@@ -45,8 +45,8 @@ function ShowBlogCards() {
                             <Badge fz="xs" fw={700} variant="light" mr="0.5rem">{e}</Badge>
                         ))}
                     </Flex>
-                    <UnstyledButton fz="sm">
-                        {i.author}
+                    <UnstyledButton fz="sm" fw={600}>
+                        CHAPTER: {i.chapter}
                     </UnstyledButton>
                 </Stack>
             </Accordion.Control>
@@ -54,8 +54,8 @@ function ShowBlogCards() {
                 <Stack>
                     <UnstyledButton>{i.description}</UnstyledButton>
                     <Flex>
-                        <EditBlogButton data={i}/>
-                        <DeleteBlogButton id={i.id}/>
+                        <EditCurriculumButton data={i}/>
+                        <DeleteCurriculumButton id={i.id}/>
                     </Flex>
                 </Stack>
             </Accordion.Panel>
@@ -65,16 +65,16 @@ function ShowBlogCards() {
     return (
         <Container>
             <Space h="sm" />
-            <Title ml="2rem">Blog</Title>
+            <Title ml="2rem">Curriculum</Title>
             <Space h="md" />
             <Text>Enjoy exploring contents!</Text>
-            <BlogForm />
-            <ResetBlogButton setfunc={setData}/>
-            <SortBlog data={data} setfunc={setData}/>
-            <FliterBlog data={data} setfunc={setData}/>
+            <CurriculumForm />
+            <ResetCurriculumButton setfunc={setData}/>
+            <SortCurriculum data={data} setfunc={setData}/>
+            <FliterCurriculum data={data} setfunc={setData}/>
             <Accordion variant="contained">{createCards}</Accordion>
         </Container>
     )
 }
 
-export default ShowBlogCards
+export default ShowCurriculumCards

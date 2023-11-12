@@ -1,4 +1,4 @@
-import { Accordion, Badge, Button, Container, Flex, Stack, UnstyledButton } from "@mantine/core"
+import { Accordion, Badge, Button, Container, Flex, Space, Stack, Text, Title, UnstyledButton } from "@mantine/core"
 import { IconExternalLink } from "@tabler/icons-react"
 import { useEffect, useState } from "react"
 import Vedeo from "../../model/vedeo"
@@ -42,7 +42,7 @@ function ShowVedeoCards() {
                     
                     <Flex>
                         {i.tag_list.map((e) => (
-                            <Badge fz="xs" fw={700} variant="light">{e}</Badge>
+                            <Badge fz="xs" fw={700} variant="light" mr="0.5rem">{e}</Badge>
                         ))}
                     </Flex>
                     <UnstyledButton fz="sm">
@@ -64,6 +64,10 @@ function ShowVedeoCards() {
 
     return (
         <Container>
+            <Space h="sm" />
+            <Title ml="2rem">Vedeo</Title>
+            <Space h="md" />
+            <Text>Enjoy exploring contents!</Text>
             <VedeoForm />
             <ResetVedeoButton setfunc={setData}/>
             <SortVedeo data={data} setfunc={setData}/>
